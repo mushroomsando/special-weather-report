@@ -20,12 +20,14 @@ Powe by [대한민국 기상청 API](http://apis.data.go.kr/1360000/WthrWrnInfoS
 * `serviceKey`: 발급받은 API 키.
 * `pageNo`: 결과의 페이지 번호.
 * `numOfRows`: 페이지 당 결과 수.
-* `dataType`: 데이터 유형 (XML 또는 JSON). Defalt = XML
-* `fromTmFc`: 조회 시작 시간 (YYYYMMDD), 입력하지 않으면 현재 날짜.
-* `toTmFc`: 조회 종료 시간 (YYYYMMDD), 입력하지 않으면 현재 날짜.
-* `areaCode`: 특정 지역을 위한 지역 코드.
+* `dataType`: 데이터 유형 (XML 또는 JSON).
+* `fromTmFc`:  시간 (YYYYMMDD), 입력하지 않으면 현재 날짜.
+* `toTmFc`:  (YYYYMMDD), 입력하지 않으면 현재 날짜.
+* `areaCode`: 특보구역 코드, [* 자료 참조](https://github.com/mushroomsando/special-weather-report/blob/04ab3ff15122fa82cabe61c0c1f21cb446583349/official_document/%EA%B8%B0%EC%83%81%EC%B2%AD21_%EA%B8%B0%EC%83%81%ED%8A%B9%EB%B3%B4%20%EC%A1%B0%ED%9A%8C%EC%84%9C%EB%B9%84%EC%8A%A4_%EC%98%A4%ED%94%88API%ED%99%9C%EC%9A%A9%EA%B0%80%EC%9D%B4%EB%93%9C_%ED%8A%B9%EB%B3%B4%EA%B5%AC%EC%97%AD%EC%BD%94%EB%93%9C%EC%95%88%EB%82%B4(210715).xlsx)
 * `warningType`: 경보 유형 (1-강풍, 2-비, 3-한파 등).
-* `stnId`: 지점 코드.
+* `stnId`: 지점 유형.
+
+*데이터는 시간 주기로 생성*
 
 더 많은 정보는 [API 문서-29페이지](https://github.com/mushroomsando/special-weather-report/blob/fd2699728cb1a1b54fddcb5455ad5c2732945e26/official_document/%EA%B8%B0%EC%83%81%EC%B2%AD21_%EA%B8%B0%EC%83%81%ED%8A%B9%EB%B3%B4%20%EC%A1%B0%ED%9A%8C%EC%84%9C%EB%B9%84%EC%8A%A4_%EC%98%A4%ED%94%88API%ED%99%9C%EC%9A%A9%EA%B0%80%EC%9D%B4%EB%93%9C.docx)를 참조하세요.
 
