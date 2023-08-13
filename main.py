@@ -28,8 +28,8 @@ def get_raw_data(service_key, areacode, branchCod, warningType = '', fromTime = 
     response = requests.get(url, params=params)
     data = response.json()
     
-    if data["response"]["header"]["resultCode"] == "3":
-        raise ValueError("데이터가 없습니다. 파라메터 값을 올바르게 입력했는지 확인해 주세요.")
+    if data["response"]["header"]["resultCode"] == "03":
+        raise ValueError("해당지역에 내려진 가상특보 데이터가 없습니다.")
     else:
         return data
 
