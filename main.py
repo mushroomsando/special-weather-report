@@ -34,7 +34,7 @@ def get_raw_data(service_key, areacode, branchCod, warningType = '', fromTime = 
         return data
 
 def extract_weather_info(raw_data):
-    data = dict()
+    data = []
 
     for item in raw_data["response"]["body"]["items"]["item"]:
         forecast_time = item["tmFc"]
@@ -50,20 +50,20 @@ def extract_weather_info(raw_data):
         warn_stress_name = reference_data["warnStress"][str(warn_stress)]
         command_name = reference_data["command"][str(command)]
     
-    data_item = {
-        "forecast_time": forecast_time,
-        "area_name": area_name,
-        "warn_value": warn_var_name,
-        "warn_stress": warn_stress_name,
-        "command_name": command_name, 
-        "start_time": start_time,
-        "end_time": end_time,
-        "is_cancel": is_cancel
-    }
+        data_item = {
+            "forecast_time": forecast_time,
+            "area_name": area_name,
+            "warn_value": warn_var_name,
+            "warn_stress": warn_stress_name,
+            "command_name": command_name, 
+            "start_time": start_time,
+            "end_time": end_time,
+            "is_cancel": is_cancel
+        }
 
-    data[forecast_time] = data_item
+        data.append(data_item)
 
     return data
 
-raw = get_raw_data(open("api_key.txt", "r"), "L1080100", "108")
+raw = get_raw_data(open("api_key.txt", "r"), "L1080100", "108",fromTime="20230810",toTime="20230813")
 print(extract_weather_info(raw))
